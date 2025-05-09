@@ -1,0 +1,46 @@
+body {
+    margin: 0px;
+}
+
+.ranking-board {
+    background-color: #00864b;
+    color: white;
+    padding: 20px;
+    font-family: "Pretendard";
+    position: relative;
+  }
+  
+  .ranking-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .ranking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .player-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .trophy {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .score {
+    font-weight: bold;
+  }
+  

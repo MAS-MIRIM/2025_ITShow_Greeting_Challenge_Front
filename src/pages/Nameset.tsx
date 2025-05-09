@@ -6,7 +6,7 @@ const Nameset = () => {
 
   const handleSubmit = () => {
     if (name.trim()) {
-      alert(`닉네임: ${name}`);
+      // 입력
     } else {
       alert('닉네임을 입력해주세요!');
     }
