@@ -1,9 +1,9 @@
 body {
     margin: 0px;
+    background: #0B7D54;
 }
 
 .ranking-board {
-    background-color: #00864b;
     color: white;
     padding: 20px;
     font-family: "Pretendard";
@@ -11,10 +11,14 @@ body {
   }
   
   .ranking-title {
+    margin-top: 7%;
     text-align: center;
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 20px;
+    color: #FCFCFC;
+    font-family: Pretendard;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
   }
   
   .ranking-list {
@@ -25,19 +29,28 @@ body {
   
   .ranking-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 120px;
+    color: #FCFCFC;
+    font-family: Pretendard;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 5%;
   }
   
   .player-info {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 20px;
   }
   
   .trophy {
-    width: 20px;
-    height: 20px;
+    width: 96px;
+    height: 96px;
+    aspect-ratio: 1/1;
   }
   
   .score {
