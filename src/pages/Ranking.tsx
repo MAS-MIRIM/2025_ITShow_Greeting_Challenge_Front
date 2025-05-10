@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Ranking.css';
 import gold from '../assets/Gold.png';
 import silver from '../assets/Silver.png';
@@ -17,11 +17,6 @@ type RankingItemProps = {
   score: string;
 };
 
-const players: Player[] = Array.from({ length: 12 }, (_, i) => ({
-  name: `Player name ${i + 1}`,
-  score: '999999999',
-}));
-
 const RankingItem: React.FC<RankingItemProps> = ({ rank, name, score }) => {
   const trophy = rank <= 3 ? trophies[rank - 1] : null;
 
@@ -37,6 +32,35 @@ const RankingItem: React.FC<RankingItemProps> = ({ rank, name, score }) => {
 };
 
 const Ranking: React.FC = () => {
+  const [players, setPlayers] = useState<Player[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // API URL
+    const fetchPlayers = async () => {
+      try {
+        // 예시: const response = await fetch('/api/players');
+        // const data = await response.json();
+
+        // 더미 데이터
+        const data: Player[] = Array.from({ length: 12 }, (_, i) => ({
+          name: `Player name ${i + 1}`,
+          score: '999999999',
+        }));
+
+        setPlayers(data);
+      } catch (error) {
+        console.error('플레이어 데이터 불러오기 실패:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPlayers();
+  }, []);
+
+  if (loading) return <div className="ranking-board">로딩 중...</div>;
+
   return (
     <div className="ranking-board">
       <h2 className="ranking-title">RANKING</h2>
